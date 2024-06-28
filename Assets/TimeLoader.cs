@@ -48,7 +48,6 @@ public class TimeLoader : MonoBehaviour
         StoredURL = url;
         StoredCallback = callback = _callback;
         StartCoroutine(callRequest(url));
-        print("**start delay");
         StartCoroutine(DelayAndHideAlert());
     }
     IEnumerator DelayAndHideAlert()

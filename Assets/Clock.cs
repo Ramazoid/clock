@@ -72,7 +72,6 @@ public class Clock : MonoBehaviour
             {
                 Minutes = 0;SetMinutes(Minutes);
                 Hours++;SetHours(Hours);
-                print("**********************reload!!!!!!!!!!!!!!!");
                 TimeLoader.GetTime();
                 if (Hours==24)
                 {
@@ -92,22 +91,7 @@ public class Clock : MonoBehaviour
         else return '\0';
     }
 
-    private string FormatTimeText(string input)
-    {
-        string i =input.Replace(':', '\0');
-        switch(i.Length)
-        {
-            case 0: return i;break;
-            case 1: return i+":";break;
-            case 2: return i+":";break;
-            case 3: return i.Sub(0,2)+":"+i.Sub(2,1)+":";break;
-            case 4: return i.Sub(0,2)+":"+i.Sub(2,2)+": "+"x"; break;
-            case 5: return i.Sub(0,2)+":"+i.Sub(2,2)+": "+ i.Sub(4, 1)+"x"; break;
-            case 6: return i.Sub(0,2)+":"+i.Sub(2,2)+": "+ i.Sub(4, 2)+"x"; break;
-                
-        }
-        return "---";
-    }
+    
 
     public void SetFromInput(string who)
     {
